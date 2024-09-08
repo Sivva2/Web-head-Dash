@@ -1,0 +1,102 @@
+body {
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+#game-container {
+  display: none;
+  width: 100vw;
+  padding: 20px 0px;
+  justify-content: center;
+}
+
+#game-screen {
+  align-content: center;
+  padding: 20%;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+}
+
+#image {
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+}
+.img1,
+.img2,
+.img3,
+.img4,
+.img5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.img1 {
+  background-image: url(../images/1.png);
+  z-index: 1;
+  animation: slide 17s infinite linear;
+}
+
+.img2 {
+  background-image: url(../images/2.png);
+  z-index: 2;
+  animation: slide 14s infinite linear;
+}
+.img3 {
+  background-image: url(../images/3.png);
+  z-index: 3;
+  animation: slide 11s infinite linear;
+}
+.img4 {
+  background-image: url(../images/4.png);
+  z-index: 4;
+  animation: slide 8s infinite linear;
+}
+.img5 {
+  background-image: url(../images/5.png);
+  z-index: 5;
+  animation: slide 5s infinite linear;
+}
+
+#obstacle {
+  position: absolute;
+  bottom: 0;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  background-color: #00f; /* Bleu */
+  animation: moveObstacle 2s infinite linear;
+}
+
+#obstacle2 {
+  position: absolute;
+  bottom: 0;
+  right: -40px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #00f; /* Triangle bleu */
+  animation: moveObstacle 2s infinite linear;
+}
+@keyframes slide {
+  0% {
+    background-position: 1000px 0px;
+  }
+  95% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50 0px;
+  }
+}
