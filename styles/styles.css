@@ -44,23 +44,23 @@ body {
 .img1 {
   background-image: url(../images/1.png);
   z-index: 1;
-  animation: slide 17s infinite linear;
+  animation: slide 200s infinite linear;
 }
 
 .img2 {
   background-image: url(../images/2.png);
   z-index: 2;
-  animation: slide 14s infinite linear;
+  animation: slide 20s infinite linear;
 }
 .img3 {
   background-image: url(../images/3.png);
   z-index: 3;
-  animation: slide 11s infinite linear;
+  animation: slide 15s infinite linear;
 }
 .img4 {
   background-image: url(../images/4.png);
   z-index: 4;
-  animation: slide 8s infinite linear;
+  animation: slide 10s infinite linear;
 }
 .img5 {
   background-image: url(../images/5.png);
@@ -91,12 +91,9 @@ body {
 }
 @keyframes slide {
   0% {
-    background-position: 1000px 0px;
-  }
-  95% {
     background-position: 0 0;
   }
   100% {
-    background-position: 50 0px;
+    background-position: -100vw 0;
   }
 }
