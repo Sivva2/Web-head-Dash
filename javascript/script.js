@@ -13,8 +13,9 @@ window.addEventListener("load", () => {
 });
 
 document.addEventListener("keydown", (event) => {
+  const gameScreen = document.getElementById("game-screen");
   if (event.code === "ArrowUp") {
-    console.log("Jump");
+    new player(gameScreen).jump();
   }
   if (event.code === "ArrowDown") {
     console.log("Down");
