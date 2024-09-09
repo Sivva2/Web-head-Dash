@@ -4,19 +4,14 @@ body {
   margin: 0;
 }
 
-#game-container {
-  display: none;
-  width: 100vw;
-  padding: 20px 0px;
-  justify-content: center;
-}
-
 #game-screen {
+  display: none;
   align-content: center;
-  padding: 20%;
+  padding: 0;
   overflow: hidden;
   position: relative;
   background-size: cover;
+  background-position: top center;
 }
 
 #image {
@@ -65,30 +60,9 @@ body {
 .img5 {
   background-image: url(../images/5.png);
   z-index: 5;
-  animation: slide 5s infinite linear;
+  animation: slide 7s infinite linear;
 }
 
-#obstacle {
-  position: absolute;
-  bottom: 0;
-  right: -40px;
-  width: 40px;
-  height: 40px;
-  background-color: #00f; /* Bleu */
-  animation: moveObstacle 2s infinite linear;
-}
-
-#obstacle2 {
-  position: absolute;
-  bottom: 0;
-  right: -40px;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 40px solid #00f; /* Triangle bleu */
-  animation: moveObstacle 2s infinite linear;
-}
 @keyframes slide {
   0% {
     background-position: 0 0;
@@ -96,4 +70,12 @@ body {
   100% {
     background-position: -100vw 0;
   }
+}
+
+.logo {
+  width: 100vw;
+}
+
+#game-end {
+  display: none;
 }

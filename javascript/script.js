@@ -7,5 +7,16 @@ window.addEventListener("load", () => {
 
   function startGame() {
     console.log("start game");
+    game = new Game();
+    game.start();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.code === "ArrowUp") {
+    console.log("Jump");
+  }
+  if (event.code === "ArrowDown") {
+    console.log("Down");
   }
 });
