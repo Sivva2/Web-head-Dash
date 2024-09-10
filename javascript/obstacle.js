@@ -4,7 +4,10 @@ class Obstacle {
     this.width = 90;
     this.height = 50;
 
-    this.right = -80;
+    this.left = Math.round(
+      Math.random() * (gamescreen.clientWidth - this.width)
+    );
+    this.top = gamescreen.clientHeight - this.height;
     this.element = document.createElement("img");
 
     this.element.src = "../images/$Rhino.png";
@@ -16,5 +19,14 @@ class Obstacle {
     this.element.style.top = `${this.top}px`;
 
     this.gamescreen.appendChild(this.element);
+  }
+
+  render() {
+    this.move();
+    this.element.style.top = `${this.top}px`;
+  }
+
+  move() {
+    this.top += 3;
   }
 }

@@ -17,7 +17,7 @@ class Game {
 
     this.gameScreen.style.width = `${this.width}px`;
     this.gameScreen.style.height = `${this.height}px`;
-
+    /*this.obstacle.push(new obstacle());*/
     this.player = new player(this.gameScreen);
     this.gameLoop();
   }
