@@ -29,22 +29,22 @@ class Game {
       this.player.render();
       this.currentFrames += 1;
 
-      if (this.currentFrames % 120 === 0) {
+      if (this.currentFrames % 60 === 0) {
         this.obstacles.push(
           new Obstacle(this.gameScreen, this.player.jumpHeight)
         );
       }
 
       const nextObstacles = [];
-      this.obstacles.forEach((currentObstacles) => {
-        currentObstacles.render();
-        if (this.player.didCollide(currentObstacles)) {
-          currentObstacles.remove();
+      this.obstacles.forEach((currentObstacle) => {
+        currentObstacle.render();
+        if (this.player.didCollide(currentObstacle)) {
+          currentObstacle.remove();
           this.isGameOver = true;
-        } else if (currentObstacles.left + currentObstacles.width > 0) {
-          nextObstacles.push(currentObstacles);
+        } else if (currentObstacle.left + currentObstacle.width > 0) {
+          nextObstacles.push(currentObstacle);
         } else {
-          currentObstacles.remove();
+          currentObstacle.remove();
         }
       });
       this.obstacles = nextObstacles;

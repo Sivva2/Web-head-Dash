@@ -1,11 +1,11 @@
 class Obstacle {
-  constructor(gamescreen, maxObstableHeight) {
+  constructor(gamescreen) {
     this.gamescreen = gamescreen;
     this.width = 90;
     this.height = 50;
 
     this.left = gamescreen.clientWidth;
-    this.top = Math.round(Math.random() * maxObstableHeight);
+    this.top = Math.round(Math.random() * 100) + gamescreen.clientHeight - 150;
     this.element = document.createElement("img");
 
     this.element.src = "../images/$Rhino.png";
@@ -21,14 +21,11 @@ class Obstacle {
 
   render() {
     this.move();
-    this.element.style.top = `${this.top}px`;
+    this.element.style.left = `${this.left}px`;
   }
 
   move() {
-    this.left += 3;
-    if (this.left + this.height < 0) {
-      this.remove();
-    }
+    this.left -= 15;
   }
   remove() {
     this.element.remove();

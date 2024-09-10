@@ -6,10 +6,10 @@ class player {
     this.left = 100;
     this.top = gamescreen.clientHeight - this.height;
     this.speed = 5;
-    this.jumpHeight = 180;
+    this.jumpHeight = 190;
     this.isJumping = false;
-    this.gravity = 15;
-    this.jumpSpeed = 15;
+    this.gravity = 10;
+    this.jumpSpeed = 20;
     this.element = document.createElement("img");
 
     this.element.src = "../images/Spider-Man debout.png";
@@ -66,5 +66,11 @@ class player {
   didCollide(obstacle) {
     const playerRect = this.element.getBoundingClientRect();
     const obstacleRect = obstacle.element.getBoundingClientRect();
+    return (
+      playerRect.left < obstacleRect.right &&
+      playerRect.right > obstacleRect.left &&
+      playerRect.top < obstacleRect.bottom &&
+      playerRect.bottom > obstacleRect.top
+    );
   }
 }
