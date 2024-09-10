@@ -50,7 +50,7 @@ class Game {
       this.obstacles = nextObstacles;
       if (this.isGameOver) {
         clearInterval(loop);
-        this.gameCtn.style.display = "none";
+
         this.endScreen.style.display = "block";
         this.player.element.remove();
         this.obstacles.forEach((currentObstacles) => {
