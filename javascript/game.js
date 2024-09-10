@@ -4,11 +4,14 @@ class Game {
     this.gameCtn = document.getElementById("game-container");
     this.gameScreen = document.getElementById("game-screen");
     this.endScreen = document.getElementById("game-end");
+    /*this.width = this.gameScreen.clientWidth;
+    this.height = this.gameScreen.clientHeight;*/
     this.player;
     this.obstacles = [];
     this.score = 0;
     this.isGameOver = false;
     this.framesPerSecond = 1000 / 60;
+    this.currentFrames = 0;
   }
 
   start() {
@@ -17,13 +20,43 @@ class Game {
 
     this.gameScreen.style.width = `${this.width}px`;
     this.gameScreen.style.height = `${this.height}px`;
-    /*this.obstacle.push(new obstacle());*/
-    this.player = new player(this.gameScreen);
+
+    this.player = new player(this.gameScreen, this.height);
     this.gameLoop();
   }
   gameLoop() {
-    setInterval(() => {
+    const loop = setInterval(() => {
       this.player.render();
+      this.currentFrames += 1;
+
+      if (this.currentFrames % 120 === 0) {
+        this.obstacles.push(
+          new Obstacle(this.gameScreen, this.player.jumpHeight)
+        );
+      }
+
+      const nextObstacles = [];
+      this.obstacles.forEach((currentObstacles) => {
+        currentObstacles.render();
+        if (this.player.didCollide(currentObstacles)) {
+          currentObstacles.remove();
+          this.isGameOver = true;
+        } else if (currentObstacles.left + currentObstacles.width > 0) {
+          nextObstacles.push(currentObstacles);
+        } else {
+          currentObstacles.remove();
+        }
+      });
+      this.obstacles = nextObstacles;
+      if (this.isGameOver) {
+        clearInterval(loop);
+        this.gameCtn.style.display = "none";
+        this.endScreen.style.display = "block";
+        this.player.element.remove();
+        this.obstacles.forEach((currentObstacles) => {
+          currentObstacles.remove();
+        });
+      }
     }, this.framesPerSecond);
   }
 }

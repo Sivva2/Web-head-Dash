@@ -62,4 +62,9 @@ class player {
       }
     }, 20);
   }
+
+  didCollide(obstacle) {
+    const playerRect = this.element.getBoundingClientRect();
+    const obstacleRect = obstacle.element.getBoundingClientRect();
+  }
 }
