@@ -73,7 +73,7 @@ class player {
     this.isCrouching = true;
 
     this.height = this.crouchHeight;
-    this.element.src = "../images/Spider-Man SV couché.png";
+    this.element.src = "/images/Spider-Man SV couché.png";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
     this.element.style.zIndex = 10;
@@ -93,7 +93,7 @@ class player {
     this.isCrouching = false;
     this.top = this.gamescreen.clientHeight - this.normalHeight;
     this.height = this.normalHeight;
-    this.element.src = "../images/Spider-Man debout.png";
+    this.element.src = "/images/Spider-Man debout.png";
     this.element.style.height = `${this.height}px`;
     this.render();
   }
