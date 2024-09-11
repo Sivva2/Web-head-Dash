@@ -39,28 +39,28 @@ body {
 }
 
 .img1 {
-  background-image: url(../images/1.png);
+  background-image: url(/images/1.png);
   z-index: 1;
   animation: slide 200s infinite linear;
 }
 
 .img2 {
-  background-image: url(../images/2.png);
+  background-image: url(/images/2.png);
   z-index: 2;
   animation: slide 20s infinite linear;
 }
 .img3 {
-  background-image: url(../images/3.png);
+  background-image: url(/images/3.png);
   z-index: 3;
   animation: slide 15s infinite linear;
 }
 .img4 {
-  background-image: url(../images/4.png);
+  background-image: url(/images/4.png);
   z-index: 4;
   animation: slide 10s infinite linear;
 }
 .img5 {
-  background-image: url(../images/5.png);
+  background-image: url(/images/5.png);
   z-index: 5;
   animation: slide 7s infinite linear;
 }

@@ -15,7 +15,7 @@ class player {
     this.crouchHeight = 50;
     this.element = document.createElement("img");
 
-    this.element.src = "../images/Spider-Man debout.png";
+    this.element.src = "/images/Spider-Man debout.png";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
     this.element.style.zIndex = 10;

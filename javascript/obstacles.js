@@ -8,7 +8,7 @@ class Obstacle {
     this.top = Math.round(Math.random() * 100) + gamescreen.clientHeight - 150;
     this.element = document.createElement("img");
 
-    this.element.src = "../images/$Rhino.png";
+    this.element.src = "/images/$Rhino.png";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
     this.element.style.zIndex = 10;
