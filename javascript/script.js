@@ -4,7 +4,9 @@ window.addEventListener("load", () => {
   startButton.addEventListener("click", () => {
     startGame();
   });
-
+  restartButton.addEventListener("click", () => {
+    startGame();
+  });
   function startGame() {
     console.log("start game");
     game = new Game();
