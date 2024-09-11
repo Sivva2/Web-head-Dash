@@ -4,8 +4,6 @@ class Game {
     this.gameCtn = document.getElementById("game-container");
     this.gameScreen = document.getElementById("game-screen");
     this.endScreen = document.getElementById("game-end");
-    /*this.width = this.gameScreen.clientWidth;
-    this.height = this.gameScreen.clientHeight;*/
     this.player;
     this.obstacles = [];
     this.score = 0;
@@ -50,7 +48,7 @@ class Game {
       this.obstacles = nextObstacles;
       if (this.isGameOver) {
         clearInterval(loop);
-
+        this.gameScreen.style.display = "none";
         this.endScreen.style.display = "block";
         this.player.element.remove();
         this.obstacles.forEach((currentObstacles) => {
