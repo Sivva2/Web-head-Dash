@@ -81,6 +81,13 @@ h2 {
   background-position: top center;
 }
 
+#game-container {
+  display: none;
+  width: 100vw;
+  padding: 20px 0px;
+  justify-content: center;
+}
+
 #image {
   align-content: center;
   width: 100vw;
@@ -89,6 +96,7 @@ h2 {
   position: relative;
   background-size: cover;
 }
+
 .img1,
 .img2,
 .img3,
@@ -142,10 +150,12 @@ h2 {
 #game-end {
   display: none;
 }
+
 #restart-button {
   margin-left: 900px;
   margin-top: 100px;
 }
+
 .btn {
   padding: 15px 40px;
   border: none;
@@ -227,4 +237,18 @@ h2 {
 .btn:active {
   color: #000;
   font-weight: bold;
+}
+
+#score-display {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 40px;
+  color: white;
+  z-index: 10;
+}
+
+#final-score {
+  font-size: 50px;
+  color: #ff0000;
 }

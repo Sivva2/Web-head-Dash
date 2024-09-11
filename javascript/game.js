@@ -4,6 +4,8 @@ class Game {
     this.gameCtn = document.getElementById("game-container");
     this.gameScreen = document.getElementById("game-screen");
     this.endScreen = document.getElementById("game-end");
+    this.scoreElement = document.getElementById("score");
+    this.finalScoreElement = document.getElementById("final-score");
     this.player;
     this.obstacles = [];
     this.score = 0;
@@ -22,6 +24,7 @@ class Game {
     this.player = new player(this.gameScreen, this.height);
     this.gameLoop();
   }
+
   gameLoop() {
     const loop = setInterval(() => {
       this.player.render();
@@ -43,13 +46,18 @@ class Game {
           nextObstacles.push(currentObstacle);
         } else {
           currentObstacle.remove();
+          this.score += 50;
+          this.scoreElement.innerText = this.score;
         }
       });
+
       this.obstacles = nextObstacles;
       if (this.isGameOver) {
         clearInterval(loop);
         this.gameScreen.style.display = "none";
         this.endScreen.style.display = "block";
+        this.finalScoreElement.innerText = `Final Score: ${this.score}`;
+
         this.player.element.remove();
         this.obstacles.forEach((currentObstacles) => {
           currentObstacles.remove();

@@ -11,6 +11,8 @@ window.addEventListener("load", () => {
     console.log("start game");
     game = new Game();
     game.start();
+    document.getElementById("score").innerText = "0";
+    document.getElementById("final-score").innerText = "Final Score: 0";
   }
 });
 
