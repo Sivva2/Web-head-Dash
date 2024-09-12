@@ -6,9 +6,11 @@ class Game {
     this.endScreen = document.getElementById("game-end");
     this.scoreElement = document.getElementById("score");
     this.finalScoreElement = document.getElementById("final-score");
+    this.bestScoreElement = document.getElementById("best-score");
     this.player;
     this.obstacles = [];
     this.score = 0;
+    this.bestScore = localStorage.getItem("bestScore") || 0;
     this.isGameOver = false;
     this.framesPerSecond = 1000 / 60;
     this.currentFrames = 0;
@@ -57,6 +59,12 @@ class Game {
         this.gameScreen.style.display = "none";
         this.endScreen.style.display = "block";
         this.finalScoreElement.innerText = `Final Score: ${this.score}`;
+
+        if (this.score > this.bestScore) {
+          this.bestScore = this.score;
+          localStorage.setItem("bestScore", this.bestScore);
+        }
+        this.bestScoreElement.innerText = `Best Score: ${this.bestScore}`;
 
         this.player.element.remove();
         this.obstacles.forEach((currentObstacles) => {
