@@ -28,13 +28,23 @@ class Game {
   }
 
   gameLoop() {
+    let baseSpeed = 2;
+    const speedIncrement = 0.5;
     const loop = setInterval(() => {
       this.player.render();
       this.currentFrames += 1;
 
-      if (this.currentFrames % 60 === 0) {
+      let currentSpeed =
+        baseSpeed + Math.floor(this.currentFrames / 100) * speedIncrement;
+      console.log(currentSpeed);
+
+      if (this.currentFrames % 80 === 0) {
         this.obstacles.push(
-          new Obstacle(this.gameScreen, this.player.jumpHeight)
+          new Obstacle(
+            this.gameScreen,
+            this.player.jumpHeight,
+            this.currentSpeed
+          )
         );
       }
 

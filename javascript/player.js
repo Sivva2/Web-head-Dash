@@ -9,7 +9,7 @@ class player {
     this.jumpHeight = 210;
     this.isJumping = false;
     this.isCrouching = false;
-    this.gravity = 15;
+    this.gravity = 10;
     this.jumpSpeed = 20;
     this.normalHeight = this.height;
     this.crouchHeight = 50;

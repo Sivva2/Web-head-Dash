@@ -1,9 +1,9 @@
 class Obstacle {
-  constructor(gamescreen) {
+  constructor(gamescreen, speed) {
     this.gamescreen = gamescreen;
     this.width = 90;
     this.height = 50;
-
+    this.speed = speed;
     this.left = gamescreen.clientWidth;
     this.top = Math.round(Math.random() * 100) + gamescreen.clientHeight - 150;
     this.element = document.createElement("img");
@@ -25,7 +25,7 @@ class Obstacle {
   }
 
   move() {
-    this.left -= 15;
+    this.left -= this.speed;
   }
   remove() {
     this.element.remove();
