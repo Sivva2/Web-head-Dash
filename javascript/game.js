@@ -38,7 +38,7 @@ class Game {
         this.multiplier += 0.1;
       }
 
-      if (this.currentFrames % 80 === 0) {
+      if (this.currentFrames % 40 === 0) {
         this.obstacles.push(
           new Obstacle(this.gameScreen, this.player.jumpHeight, this.multiplier)
         );
