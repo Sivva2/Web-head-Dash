@@ -14,6 +14,8 @@ class Game {
     this.isGameOver = false;
     this.framesPerSecond = 1000 / 60;
     this.currentFrames = 0;
+    this.multiplier = 1;
+    this.framesUntilMultiplierIncrease = 100;
   }
 
   start() {
@@ -28,23 +30,17 @@ class Game {
   }
 
   gameLoop() {
-    let baseSpeed = 2;
-    const speedIncrement = 0.5;
     const loop = setInterval(() => {
       this.player.render();
       this.currentFrames += 1;
 
-      let currentSpeed =
-        baseSpeed + Math.floor(this.currentFrames / 100) * speedIncrement;
-      console.log(currentSpeed);
+      if (this.currentFrames % this.framesUntilMultiplierIncrease === 0) {
+        this.multiplier += 0.1;
+      }
 
       if (this.currentFrames % 80 === 0) {
         this.obstacles.push(
-          new Obstacle(
-            this.gameScreen,
-            this.player.jumpHeight,
-            this.currentSpeed
-          )
+          new Obstacle(this.gameScreen, this.player.jumpHeight, this.multiplier)
         );
       }
 

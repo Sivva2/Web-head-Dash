@@ -1,11 +1,12 @@
 class Obstacle {
   constructor(gamescreen, speed) {
     this.gamescreen = gamescreen;
+    this.speed = speed;
     this.width = 90;
     this.height = 50;
-    this.speed = speed;
     this.left = gamescreen.clientWidth;
     this.top = Math.round(Math.random() * 100) + gamescreen.clientHeight - 150;
+    this.speed = 15 * game.multiplier;
     this.element = document.createElement("img");
 
     this.element.src = "./images/$Rhino.png";
