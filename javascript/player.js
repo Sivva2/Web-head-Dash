@@ -6,7 +6,7 @@ class player {
     this.left = 100;
     this.top = gamescreen.clientHeight - this.height;
     this.speed = 5;
-    this.jumpHeight = 210;
+    this.jumpHeight = 200;
     this.isJumping = false;
     this.isCrouching = false;
     this.gravity = 10;
